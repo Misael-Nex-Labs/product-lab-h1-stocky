@@ -1,69 +1,369 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
 
 export default function Home() {
+  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="bg-white text-zinc-900">
+      <header className="border-b border-zinc-200">
+        <div className="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
+          <div>
+            <p className="text-sm font-semibold tracking-tight">
+              Product Lab — experimento H1
+            </p>
+            <p className="text-xs text-zinc-500">
+              Reposição simplificada pós-Stocky para Shopify
+            </p>
+          </div>
+          <a
+            href="#form"
+            className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
+          >
+            Quero early access
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="mx-auto max-w-6xl px-6 py-16">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Seu Stocky acabou. Aqui está uma alternativa simples para reposição
+            automática no Shopify.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-4 max-w-2xl text-lg text-zinc-600">
+            Receba alertas de estoque baixo e gere pedidos de reposição
+            automáticos, sem forecasting complexo nem planilha.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div className="mt-8">
+            <a
+              href="#form"
+              className="inline-flex items-center rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
+            >
+              Quero early access
+            </a>
+          </div>
+        </section>
+
+        <section className="border-y border-zinc-200 bg-zinc-50">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              O que você perdeu com o Stocky
+            </h2>
+            <ul className="mt-6 list-disc space-y-2 pl-5 text-zinc-700">
+              <li>Reorder automático quando estoque baixa</li>
+              <li>Geração de pedidos de compra a partir de vendas passadas</li>
+              <li>Suporte a fornecedores/vendors</li>
+              <li>Simplicidade operacional</li>
+            </ul>
+            <p className="mt-6 text-sm text-zinc-600">
+              Relatos de usuários indicam que o fluxo de PO no Shopify nativo
+              pode ser mais lento que o manual. Isso não é uma substituição
+              equivalente.
+            </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-6 py-16">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            O que esta ferramenta faz
+          </h2>
+          <p className="mt-3 text-zinc-600">
+            Hipótese de solução em validação: reposição simplificada, sem
+            complicação.
+          </p>
+          <ul className="mt-6 list-disc space-y-2 pl-5 text-zinc-700">
+            <li>Reorder automático quando estoque baixa</li>
+            <li>1 fornecedor principal por produto</li>
+            <li>Regras simples: ponto de reposição + quantidade mínima</li>
+            <li>Pedido de compra gerado em 1 clique</li>
+          </ul>
+          <p className="mt-6 text-sm text-zinc-600">
+            Sem forecasting complexo. Sem ERP. Sem onboarding pesado.
+          </p>
+        </section>
+
+        <section className="border-y border-zinc-200 bg-zinc-50">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              Comparação honesta
+            </h2>
+            <div className="mt-8 overflow-x-auto">
+              <table className="min-w-full text-left text-sm">
+                <thead>
+                  <tr className="border-b border-zinc-200">
+                    <th className="pb-2 pr-4 font-medium">Recurso</th>
+                    <th className="pb-2 pr-4 font-medium">Stocky</th>
+                    <th className="pb-2 pr-4 font-medium">Shopify Admin</th>
+                    <th className="pb-2 pr-4 font-medium">Planilha</th>
+                    <th className="pb-2 pr-4 font-medium">Apps alternativos</th>
+                    <th className="pb-2 font-medium">Esta ferramenta</th>
+                  </tr>
+                </thead>
+                <tbody className="text-zinc-700">
+                  <tr className="border-b border-zinc-100">
+                    <td className="py-2 pr-4">Auto-PO</td>
+                    <td className="py-2 pr-4">Sim</td>
+                    <td className="py-2 pr-4">Não</td>
+                    <td className="py-2 pr-4">Não</td>
+                    <td className="py-2 pr-4">Sim, com maior custo/complexidade</td>
+                    <td className="py-2 pr-4">Sim, simples</td>
+                  </tr>
+                  <tr className="border-b border-zinc-100">
+                    <td className="py-2 pr-4">Reorder automático</td>
+                    <td className="py-2 pr-4">Sim</td>
+                    <td className="py-2 pr-4">Não</td>
+                    <td className="py-2 pr-4">Não</td>
+                    <td className="py-2 pr-4">Sim</td>
+                    <td className="py-2 pr-4">Sim</td>
+                  </tr>
+                  <tr className="border-b border-zinc-100">
+                    <td className="py-2 pr-4">Fornecedores/vendors</td>
+                    <td className="py-2 pr-4">Sim</td>
+                    <td className="py-2 pr-4">Limitado</td>
+                    <td className="py-2 pr-4">Não</td>
+                    <td className="py-2 pr-4">Sim</td>
+                    <td className="py-2 pr-4">Sim</td>
+                  </tr>
+                  <tr className="border-b border-zinc-100">
+                    <td className="py-2 pr-4">Preço</td>
+                    <td className="py-2 pr-4">Grátis com POS Pro</td>
+                    <td className="py-2 pr-4">Grátis</td>
+                    <td className="py-2 pr-4">Grátis</td>
+                    <td className="py-2 pr-4">US$20–349/mês</td>
+                    <td className="py-2 pr-4">R$29/mês, hipótese</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 pr-4">Complexidade</td>
+                    <td className="py-2 pr-4">Baixa</td>
+                    <td className="py-2 pr-4">Baixa</td>
+                    <td className="py-2 pr-4">Alta</td>
+                    <td className="py-2 pr-4">Alta</td>
+                    <td className="py-2 pr-4">Baixa</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-xs text-zinc-500">
+              Esta ferramenta ainda não foi lançada. A tabela compara uma
+              hipótese de solução com alternativas existentes.
+            </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-6 py-16">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Veja como funciona
+          </h2>
+          <p className="mt-3 text-zinc-600">
+            Material conceitual, não funcional. Serve apenas para validar a
+            ideia.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-lg border border-zinc-200 p-4">
+              <p className="text-sm font-medium">1. Estoque baixo</p>
+              <p className="mt-2 text-xs text-zinc-600">
+                O Shopify indica que o produto está abaixo do ponto de reposição.
+              </p>
+            </div>
+            <div className="rounded-lg border border-zinc-200 p-4">
+              <p className="text-sm font-medium">2. Sugestão de reposição</p>
+              <p className="mt-2 text-xs text-zinc-600">
+                O app sugere quantidade com base em reorder point e vendas
+                recentes.
+              </p>
+            </div>
+            <div className="rounded-lg border border-zinc-200 p-4">
+              <p className="text-sm font-medium">3. PO gerado</p>
+              <p className="mt-2 text-xs text-zinc-600">
+                O pedido de compra é preenchido e fica pronto para envio ao
+                fornecedor.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-zinc-200 bg-zinc-50">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <h2 className="text-2xl font-semibold tracking-tight">Planos</h2>
+            <p className="mt-3 text-zinc-600">
+              Preço hipotético para validação. Sujeito a alteração.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-lg border border-zinc-200 p-6">
+                <p className="text-sm font-medium">Planilha</p>
+                <p className="mt-2 text-xs text-zinc-600">Grátis, mas manual</p>
+              </div>
+              <div className="rounded-lg border border-zinc-200 p-6">
+                <p className="text-sm font-medium">Stockful</p>
+                <p className="mt-2 text-xs text-zinc-600">R$79/mês</p>
+              </div>
+              <div className="rounded-lg border border-zinc-200 p-6">
+                <p className="text-sm font-medium">Fabrikatör</p>
+                <p className="mt-2 text-xs text-zinc-600">R$99/mês</p>
+              </div>
+            </div>
+            <div className="mt-8 rounded-lg border border-zinc-900 p-6">
+              <p className="text-sm font-medium">Esta ferramenta</p>
+              <p className="mt-2 text-xs text-zinc-600">
+                R$29/mês, simples, específica para reposição.
+              </p>
+              <p className="mt-2 text-xs text-zinc-500">
+                Early access: R$0/mês por 3 meses.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="form" className="mx-auto max-w-6xl px-6 py-16">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Quero early access
+          </h2>
+          <p className="mt-3 text-zinc-600">
+            Não construímos ainda. Este é um experimento de validação. Se houver
+            demanda suficiente, o produto será desenvolvido.
+          </p>
+          <form
+            className="mt-8 space-y-4"
+            action="https://formspree.io/f/xplaceholder"
+            method="POST"
+            onSubmit={() => setStatus("sent")}
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="space-y-1">
+                <span className="text-sm font-medium">Nome</span>
+                <input
+                  name="name"
+                  required
+                  className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                />
+              </label>
+              <label className="space-y-1">
+                <span className="text-sm font-medium">E-mail</span>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                />
+              </label>
+            </div>
+            <label className="space-y-1">
+              <span className="text-sm font-medium">URL da loja Shopify</span>
+              <input
+                name="shop"
+                required
+                className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+              />
+            </label>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="space-y-1">
+                <span className="text-sm font-medium">Número de SKUs</span>
+                <select
+                  name="skus"
+                  required
+                  className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                >
+                  <option value="">Selecione</option>
+                  <option>Até 50</option>
+                  <option>51–200</option>
+                  <option>201–500</option>
+                  <option>500+</option>
+                </select>
+              </label>
+              <label className="space-y-1">
+                <span className="text-sm font-medium">Faturamento médio mensal</span>
+                <select
+                  name="revenue"
+                  required
+                  className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                >
+                  <option value="">Selecione</option>
+                  <option>Até R$ 10k</option>
+                  <option>R$ 10k–30k</option>
+                  <option>R$ 30k–100k</option>
+                  <option>R$ 100k+</option>
+                </select>
+              </label>
+            </div>
+            <fieldset className="space-y-2">
+              <legend className="text-sm font-medium">
+                Apps de inventário atuais
+              </legend>
+              <div className="flex flex-wrap gap-3 text-sm">
+                {[
+                  "Nenhum",
+                  "Shopify nativo",
+                  "Stocky",
+                  "Planilha",
+                  "Stockful",
+                  "Fabrikatör",
+                  "Prediko",
+                  "Outro"
+                ].map((option) => (
+                  <label key={option} className="flex items-center gap-2">
+                    <input type="checkbox" name="apps" value={option} />
+                    <span>{option}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            <fieldset className="space-y-2">
+              <legend className="text-sm font-medium">Já usou Stocky?</legend>
+              <div className="flex flex-wrap gap-3 text-sm">
+                {[
+                  "Sim, ainda uso",
+                  "Sim, mas já migrei",
+                  "Não, mas usei alternativa",
+                  "Não, nunca usei"
+                ].map((option) => (
+                  <label key={option} className="flex items-center gap-2">
+                    <input type="radio" name="stocky" value={option} required />
+                    <span>{option}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            <label className="space-y-1">
+              <span className="text-sm font-medium">
+                Como resolve reposição hoje?
+              </span>
+              <textarea
+                name="workflow"
+                required
+                minLength={20}
+                className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+              />
+            </label>
+            <button
+              type="submit"
+              className="rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
+            >
+              Quero early access
+            </button>
+            {status === "sent" && (
+              <p className="text-sm text-green-700">
+                Inscrição enviada. Entraremos em contato.
+              </p>
+            )}
+          </form>
+        </section>
       </main>
+
+      <footer className="border-t border-zinc-200">
+        <div className="mx-auto max-w-6xl px-6 py-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-zinc-500">
+            Não construímos ainda. Este é um experimento de validação. Se houver
+            demanda suficiente, o produto será desenvolvido.
+          </p>
+          <div className="text-xs text-zinc-500">
+            <a href="#" className="hover:underline">Política de privacidade</a>
+            <span className="mx-2">·</span>
+            <a href="#" className="hover:underline">Contato</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
