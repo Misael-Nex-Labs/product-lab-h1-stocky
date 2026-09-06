@@ -25,27 +25,30 @@ export default function Home() {
       <main>
         <section className="mx-auto max-w-6xl px-6 py-16">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Seu Stocky acabou. Aqui está uma alternativa simples para reposição
-            automática no Shopify.
+            Alternativa simples ao Stocky para reposição automática no Shopify.
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600">
-            Receba alertas de estoque baixo e gere pedidos de reposição
-            automáticos, sem forecasting complexo nem planilha.
+            O Stocky foi descontinuado em 31 de agosto de 2026. Estamos criando
+            uma ferramenta enxuta para quem não quer forecasting complexo nem
+            planilha manual.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#form"
               className="inline-flex items-center rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
             >
               Quero early access
             </a>
+            <span className="text-xs text-zinc-500 self-center">
+              Sem cartão · Early access grátis por 3 meses
+            </span>
           </div>
         </section>
 
         <section className="border-y border-zinc-200 bg-zinc-50">
           <div className="mx-auto max-w-6xl px-6 py-16">
             <h2 className="text-2xl font-semibold tracking-tight">
-              O que você perdeu com o Stocky
+              O que mudou com o Stocky
             </h2>
             <ul className="mt-6 list-disc space-y-2 pl-5 text-zinc-700">
               <li>Reorder automático quando estoque baixa</li>
@@ -54,9 +57,9 @@ export default function Home() {
               <li>Simplicidade operacional</li>
             </ul>
             <p className="mt-6 text-sm text-zinc-600">
-              Relatos de usuários indicam que o fluxo de PO no Shopify nativo
-              pode ser mais lento que o manual. Isso não é uma substituição
-              equivalente.
+              O Shopify Admin não oferece auto-PO, reorder automático nem suporte
+              a vendors/fornecedores como Stocky fazia. Para muitos lojistas,
+              isso não é uma substituição equivalente.
             </p>
           </div>
         </section>
@@ -219,6 +222,9 @@ export default function Home() {
           <p className="mt-3 text-zinc-600">
             Não construímos ainda. Este é um experimento de validação. Se houver
             demanda suficiente, o produto será desenvolvido.
+          </p>
+          <p className="mt-2 text-xs text-zinc-500">
+            Sem cartão · Sem compromisso · Cancelável quando quiser
           </p>
           <QualificationForm />
         </section>
