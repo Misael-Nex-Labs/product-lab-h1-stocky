@@ -43,6 +43,9 @@ export default function Home() {
               Sem cartão · Early access grátis por 3 meses
             </span>
           </div>
+          <p className="mt-6 text-xs text-zinc-500">
+            Em avaliação por lojistas Shopify · Sem compromisso · Cancelável quando quiser
+          </p>
         </section>
 
         <section className="border-y border-zinc-200 bg-zinc-50">
@@ -179,6 +182,44 @@ export default function Home() {
                 O pedido de compra é preenchido e fica pronto para envio ao
                 fornecedor.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-zinc-200 bg-zinc-50">
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <h2 className="text-2xl font-semibold tracking-tight">
+              Por que esta abordagem
+            </h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              <div>
+                <p className="text-sm font-medium">Não é mais um ERP</p>
+                <p className="mt-2 text-xs text-zinc-600">
+                  Focamos apenas em reposição, não em manufacturing, forecasting
+                  avançado ou multi-location complexo.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium">Distribuição pelo ecossistema Shopify</p>
+                <p className="mt-2 text-xs text-zinc-600">
+                  Descoberta via App Store e busca, não por cold outreach ou
+                  venda consultiva.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium">Validação antes de construir</p>
+                <p className="mt-2 text-xs text-zinc-600">
+                  Não lançamos sem evidência de demanda. O early access é grátis
+                  porque ainda estamos testando se vale a pena.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-medium">Preço como hipótese</p>
+                <p className="mt-2 text-xs text-zinc-600">
+                  R$29/mês é uma referência inicial, não um preço fechado. O
+                  preço final pode mudar conforme o aprendizado.
+                </p>
+              </div>
             </div>
           </div>
         </section>
