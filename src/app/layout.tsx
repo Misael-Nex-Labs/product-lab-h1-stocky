@@ -14,21 +14,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alternativa simplificada ao Stocky para Shopify",
+  title: "Reposição simplificada pós-Stocky para Shopify",
   description:
-    "Ferramenta conceitual de reposição automática simplificada para micro-lojistas Shopify após o fim do Stocky. Validação de experimento Product Lab.",
+    "Lightweight replenishment and purchase order tool for Shopify merchants after Stocky sunset. H1 validation experiment.",
   keywords: [
     "Stocky alternative",
     "replace Stocky Shopify",
-    "Stocky descontinuado",
+    "Stocky discontinued",
     "Shopify inventory reorder automation",
     "simple inventory replacement Shopify"
   ],
   openGraph: {
-    title: "Alternativa simplificada ao Stocky para Shopify",
+    title: "Reposição simplificada pós-Stocky para Shopify",
     description:
-      "Ferramenta conceitual de reposição automática simplificada para micro-lojistas Shopify após o fim do Stocky.",
+      "Lightweight replenishment and purchase order tool for Shopify merchants after Stocky sunset.",
     type: "website"
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "pt-BR": "/",
+      "en": "/en"
+    }
   }
 };
 
