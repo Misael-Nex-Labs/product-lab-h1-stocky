@@ -7,50 +7,61 @@ export default function QualificationForm() {
 
   if (state.succeeded) {
     return (
-      <p className="text-sm text-green-700">
-        Inscrição enviada. Entraremos em contato.
-      </p>
+      <div className="rounded-xl border border-green-200 bg-green-50 p-6 text-center">
+        <p className="text-sm font-medium text-green-800">
+          Inscrição enviada. Entraremos em contato.
+        </p>
+      </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-8 space-y-4">
+    <form
+      onSubmit={handleSubmit}
+      className="mt-6 max-w-xl rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
+    >
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-1">
-          <span className="text-sm font-medium">Nome</span>
+          <span className="text-sm font-medium text-zinc-700">Nome</span>
           <input
             name="name"
             required
-            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm outline-none transition focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/20"
           />
         </label>
         <label className="space-y-1">
-          <span className="text-sm font-medium">E-mail</span>
+          <span className="text-sm font-medium text-zinc-700">E-mail</span>
           <input
             type="email"
             name="email"
             required
-            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm outline-none transition focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/20"
           />
           <ValidationError field="email" errors={state.errors} />
         </label>
       </div>
+
       <label className="space-y-1">
-        <span className="text-sm font-medium">URL da loja Shopify</span>
+        <span className="text-sm font-medium text-zinc-700">
+          URL da loja Shopify
+        </span>
         <input
           name="shop"
           required
-          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm outline-none transition focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/20"
         />
         <ValidationError field="shop" errors={state.errors} />
       </label>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-1">
-          <span className="text-sm font-medium">Número de SKUs</span>
+          <span className="text-sm font-medium text-zinc-700">
+            Número de SKUs
+          </span>
           <select
             name="skus"
             required
-            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm outline-none transition focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/20"
           >
             <option value="">Selecione</option>
             <option>Até 50</option>
@@ -60,11 +71,13 @@ export default function QualificationForm() {
           </select>
         </label>
         <label className="space-y-1">
-          <span className="text-sm font-medium">Faturamento médio mensal</span>
+          <span className="text-sm font-medium text-zinc-700">
+            Faturamento médio mensal
+          </span>
           <select
             name="revenue"
             required
-            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm outline-none transition focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/20"
           >
             <option value="">Selecione</option>
             <option>Até R$ 10k</option>
@@ -74,9 +87,12 @@ export default function QualificationForm() {
           </select>
         </label>
       </div>
+
       <fieldset className="space-y-2">
-        <legend className="text-sm font-medium">Apps de inventário atuais</legend>
-        <div className="flex flex-wrap gap-3 text-sm">
+        <legend className="text-sm font-medium text-zinc-700">
+          Apps de inventário atuais
+        </legend>
+        <div className="grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
           {[
             "Nenhum",
             "Shopify nativo",
@@ -85,47 +101,72 @@ export default function QualificationForm() {
             "Stockful",
             "Fabrikatör",
             "Prediko",
-            "Outro"
+            "Outro",
           ].map((option) => (
-            <label key={option} className="flex items-center gap-2">
-              <input type="checkbox" name="apps" value={option} />
-              <span>{option}</span>
+            <label
+              key={option}
+              className="flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2.5"
+            >
+              <input
+                type="checkbox"
+                name="apps"
+                value={option}
+                className="h-4 w-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-900"
+              />
+              <span className="text-zinc-700">{option}</span>
             </label>
           ))}
         </div>
       </fieldset>
+
       <fieldset className="space-y-2">
-        <legend className="text-sm font-medium">Já usou Stocky?</legend>
-        <div className="flex flex-wrap gap-3 text-sm">
+        <legend className="text-sm font-medium text-zinc-700">
+          Já usou Stocky?
+        </legend>
+        <div className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
           {[
             "Sim, ainda uso",
             "Sim, mas já migrei",
             "Não, mas usei alternativa",
-            "Não, nunca usei"
+            "Não, nunca usei",
           ].map((option) => (
-            <label key={option} className="flex items-center gap-2">
-              <input type="radio" name="stocky" value={option} required />
-              <span>{option}</span>
+            <label
+              key={option}
+              className="flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2.5"
+            >
+              <input
+                type="radio"
+                name="stocky"
+                value={option}
+                required
+                className="h-4 w-4 border-zinc-300 text-zinc-900 focus:ring-zinc-900"
+              />
+              <span className="text-zinc-700">{option}</span>
             </label>
           ))}
         </div>
       </fieldset>
+
       <label className="space-y-1">
-        <span className="text-sm font-medium">Como resolve reposição hoje?</span>
+        <span className="text-sm font-medium text-zinc-700">
+          Como resolve reposição hoje?
+        </span>
         <textarea
           name="workflow"
           required
           minLength={20}
-          className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          rows={4}
+          className="w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm outline-none transition focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/20"
         />
         <ValidationError field="workflow" errors={state.errors} />
       </label>
+
       <button
         type="submit"
         disabled={state.submitting}
-        className="rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-70"
+        className="mt-6 w-full rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 disabled:opacity-70"
       >
-        {state.submitting ? "Enviando..." : "Quero early access"}
+        {state.submitting ? "Enviando..." : "Quero acesso antecipado"}
       </button>
       <ValidationError errors={state.errors} />
     </form>
