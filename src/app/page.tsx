@@ -3,8 +3,8 @@ import QualificationForm from "@/components/qualification-form";
 export default function Home() {
   return (
     <div className="bg-white text-zinc-900 antialiased">
-      <header className="border-b border-zinc-200">
-        <div className="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
+      <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
           <div>
             <p className="text-sm font-semibold tracking-tight">
               Reposição simplificada pós-Stocky
@@ -15,7 +15,7 @@ export default function Home() {
             href="#form"
             className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
           >
-            Quero early access
+            Quero acesso antecipado
           </a>
         </div>
       </header>
@@ -32,19 +32,20 @@ export default function Home() {
                 O auto-PO pode continuar sem o Stocky.
               </h1>
               <p className="mt-6 text-lg text-zinc-600">
-                O Shopify Admin não oferece reorder automático nem geração simples
-                de pedidos de compra. Estamos criando uma alternativa enxuta para
-                quem quer manter o fluxo sem voltar para planilha.
+                Depois do fim do Stocky, muitos lojistas ficaram sem reorder
+                automático nem geração simples de pedidos de compra no Shopify.
+                Estamos criando uma alternativa enxuta para quem não quer voltar
+                para planilha.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href="#form"
                   className="inline-flex items-center rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
                 >
-                  Quero early access
+                  Quero acesso antecipado
                 </a>
                 <span className="text-xs text-zinc-500">
-                  Sem cartão · Early access grátis por 3 meses
+                  Sem cartão · Acesso antecipado grátis por 3 meses
                 </span>
               </div>
               <p className="mt-4 text-xs text-zinc-500">
@@ -57,7 +58,7 @@ export default function Home() {
         <section className="border-y border-zinc-200 bg-zinc-50">
           <div className="mx-auto max-w-6xl px-6 py-16">
             <h2 className="text-2xl font-semibold tracking-tight">
-              O que o Stocky fazia e o Shopify não cobre
+              O que desapareceu junto com o Stocky
             </h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -148,66 +149,94 @@ export default function Home() {
             <h2 className="text-2xl font-semibold tracking-tight">
               Comparação direta
             </h2>
-            <div className="mt-8 overflow-x-auto">
+            <p className="mt-2 text-xs text-zinc-500">
+              Esta solução ainda não foi lançada. A tabela compara uma posição
+              hipotética com alternativas existentes.
+            </p>
+            <div className="mt-6 overflow-x-auto rounded-xl border border-zinc-200">
               <table className="min-w-full text-left text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-200">
-                    <th className="pb-2 pr-4 font-medium">Recurso</th>
-                    <th className="pb-2 pr-4 font-medium">Stocky</th>
-                    <th className="pb-2 pr-4 font-medium">Shopify Admin</th>
-                    <th className="pb-2 pr-4 font-medium">Planilha</th>
-                    <th className="pb-2 pr-4 font-medium">Apps alternativos</th>
-                    <th className="pb-2 font-medium">Esta solução</th>
+                  <tr className="border-b border-zinc-200 bg-zinc-50">
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Recurso
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Stocky
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Shopify Admin
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Planilha
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Apps alternativos
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-900">
+                      Esta solução
+                    </th>
                   </tr>
                 </thead>
-                <tbody className="text-zinc-700">
-                  <tr className="border-b border-zinc-100">
-                    <td className="py-2 pr-4">Auto-PO</td>
-                    <td className="py-2 pr-4">Sim</td>
-                    <td className="py-2 pr-4">Não</td>
-                    <td className="py-2 pr-4">Não</td>
-                    <td className="py-2 pr-4">Sim, com maior custo/complexidade</td>
-                    <td className="py-2 pr-4">Sim, simples</td>
+                <tbody className="divide-y divide-zinc-100">
+                  <tr>
+                    <td className="px-4 py-3 text-zinc-700">Auto-PO</td>
+                    <td className="px-4 py-3 text-zinc-700">Sim</td>
+                    <td className="px-4 py-3 text-zinc-700">Não</td>
+                    <td className="px-4 py-3 text-zinc-700">Não</td>
+                    <td className="px-4 py-3 text-zinc-700">
+                      Sim, com maior custo/complexidade
+                    </td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      Sim, simples
+                    </td>
                   </tr>
-                  <tr className="border-b border-zinc-100">
-                    <td className="py-2 pr-4">Reorder automático</td>
-                    <td className="py-2 pr-4">Sim</td>
-                    <td className="py-2 pr-4">Não</td>
-                    <td className="py-2 pr-4">Não</td>
-                    <td className="py-2 pr-4">Sim</td>
-                    <td className="py-2 pr-4">Sim</td>
-                  </tr>
-                  <tr className="border-b border-zinc-100">
-                    <td className="py-2 pr-4">Fornecedores/vendors</td>
-                    <td className="py-2 pr-4">Sim</td>
-                    <td className="py-2 pr-4">Limitado</td>
-                    <td className="py-2 pr-4">Não</td>
-                    <td className="py-2 pr-4">Sim</td>
-                    <td className="py-2 pr-4">Sim</td>
-                  </tr>
-                  <tr className="border-b border-zinc-100">
-                    <td className="py-2 pr-4">Preço</td>
-                    <td className="py-2 pr-4">Grátis com POS Pro</td>
-                    <td className="py-2 pr-4">Grátis</td>
-                    <td className="py-2 pr-4">Grátis</td>
-                    <td className="py-2 pr-4">US$20–349/mês</td>
-                    <td className="py-2 pr-4">R$29/mês, hipótese</td>
+                  <tr className="bg-zinc-50/50">
+                    <td className="px-4 py-3 text-zinc-700">Reorder automático</td>
+                    <td className="px-4 py-3 text-zinc-700">Sim</td>
+                    <td className="px-4 py-3 text-zinc-700">Não</td>
+                    <td className="px-4 py-3 text-zinc-700">Não</td>
+                    <td className="px-4 py-3 text-zinc-700">Sim</td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      Sim
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-2 pr-4">Complexidade</td>
-                    <td className="py-2 pr-4">Baixa</td>
-                    <td className="py-2 pr-4">Baixa</td>
-                    <td className="py-2 pr-4">Alta</td>
-                    <td className="py-2 pr-4">Alta</td>
-                    <td className="py-2 pr-4">Baixa</td>
+                    <td className="px-4 py-3 text-zinc-700">
+                      Fornecedores/vendors
+                    </td>
+                    <td className="px-4 py-3 text-zinc-700">Sim</td>
+                    <td className="px-4 py-3 text-zinc-700">Limitado</td>
+                    <td className="px-4 py-3 text-zinc-700">Não</td>
+                    <td className="px-4 py-3 text-zinc-700">Sim</td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      Sim
+                    </td>
+                  </tr>
+                  <tr className="bg-zinc-50/50">
+                    <td className="px-4 py-3 text-zinc-700">Preço</td>
+                    <td className="px-4 py-3 text-zinc-700">Grátis com POS Pro</td>
+                    <td className="px-4 py-3 text-zinc-700">Grátis</td>
+                    <td className="px-4 py-3 text-zinc-700">Grátis</td>
+                    <td className="px-4 py-3 text-zinc-700">
+                      US$20–349/mês
+                    </td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      R$29/mês, hipótese
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 text-zinc-700">Complexidade</td>
+                    <td className="px-4 py-3 text-zinc-700">Baixa</td>
+                    <td className="px-4 py-3 text-zinc-700">Baixa</td>
+                    <td className="px-4 py-3 text-zinc-700">Alta</td>
+                    <td className="px-4 py-3 text-zinc-700">Alta</td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      Baixa
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-xs text-zinc-500">
-              Comparação entre uma solução hipotética e alternativas existentes.
-              O objetivo é validar se essa posição faz sentido antes de construir.
-            </p>
           </div>
         </section>
 
@@ -316,7 +345,7 @@ export default function Home() {
                 R$29/mês, simples, específica para reposição.
               </p>
               <p className="mt-2 text-xs text-zinc-500">
-                Early access: R$0/mês por 3 meses.
+                Acesso antecipado: R$0/mês por 3 meses.
               </p>
             </div>
           </div>
@@ -327,15 +356,15 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 py-20">
             <div className="max-w-2xl">
               <h2 className="text-2xl font-semibold tracking-tight">
-                Quero early access
+                Quero acesso antecipado
               </h2>
               <p className="mt-3 text-zinc-600">
                 Ainda estamos em fase de validação. Deixe seu email para ser
-                avisado do lançamento e participar do early access gratuito.
+                avisado do lançamento e participar do acesso antecipado gratuito.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-6 flex flex-wrap items-start gap-3">
                 <QualificationForm />
-                <span className="text-xs text-zinc-500">
+                <span className="text-xs text-zinc-500 pt-6">
                   Sem cartão · Sem compromisso
                 </span>
               </div>

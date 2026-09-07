@@ -3,8 +3,8 @@ import QualificationForm from "@/components/qualification-form";
 export default function HomeEN() {
   return (
     <div className="bg-white text-zinc-900 antialiased">
-      <header className="border-b border-zinc-200">
-        <div className="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
+      <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur">
+        <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
           <div>
             <p className="text-sm font-semibold tracking-tight">
               Simple replenishment after Stocky
@@ -147,67 +147,96 @@ export default function HomeEN() {
             <h2 className="text-2xl font-semibold tracking-tight">
               Direct comparison
             </h2>
-            <div className="mt-8 overflow-x-auto">
+            <p className="mt-2 text-xs text-zinc-500">
+              This solution hasn’t launched yet. The table compares a hypothetical
+              positioning with existing alternatives.
+            </p>
+            <div className="mt-6 overflow-x-auto rounded-xl border border-zinc-200">
               <table className="min-w-full text-left text-sm">
                 <thead>
-                  <tr className="border-b border-zinc-200">
-                    <th className="pb-2 pr-4 font-medium">Feature</th>
-                    <th className="pb-2 pr-4 font-medium">Stocky</th>
-                    <th className="pb-2 pr-4 font-medium">Shopify Admin</th>
-                    <th className="pb-2 pr-4 font-medium">Spreadsheet</th>
-                    <th className="pb-2 pr-4 font-medium">Alt apps</th>
-                    <th className="pb-2 font-medium">This solution</th>
+                  <tr className="border-b border-zinc-200 bg-zinc-50">
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Feature
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Stocky
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Shopify Admin
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Spreadsheet
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-500">
+                      Alt apps
+                    </th>
+                    <th className="px-4 py-3 font-medium text-zinc-900">
+                      This solution
+                    </th>
                   </tr>
                 </thead>
-                <tbody className="text-zinc-700">
-                  <tr className="border-b border-zinc-100">
-                    <td className="py-2 pr-4">Auto-PO</td>
-                    <td className="py-2 pr-4">Yes</td>
-                    <td className="py-2 pr-4">No</td>
-                    <td className="py-2 pr-4">No</td>
-                    <td className="py-2 pr-4">Yes, higher cost/complexity</td>
-                    <td className="py-2 pr-4">Yes, simple</td>
+                <tbody className="divide-y divide-zinc-100">
+                  <tr>
+                    <td className="px-4 py-3 text-zinc-700">Auto-PO</td>
+                    <td className="px-4 py-3 text-zinc-700">Yes</td>
+                    <td className="px-4 py-3 text-zinc-700">No</td>
+                    <td className="px-4 py-3 text-zinc-700">No</td>
+                    <td className="px-4 py-3 text-zinc-700">
+                      Yes, higher cost/complexity
+                    </td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      Yes, simple
+                    </td>
                   </tr>
-                  <tr className="border-b border-zinc-100">
-                    <td className="py-2 pr-4">Automatic reorder</td>
-                    <td className="py-2 pr-4">Yes</td>
-                    <td className="py-2 pr-4">No</td>
-                    <td className="py-2 pr-4">No</td>
-                    <td className="py-2 pr-4">Yes</td>
-                    <td className="py-2 pr-4">Yes</td>
-                  </tr>
-                  <tr className="border-b border-zinc-100">
-                    <td className="py-2 pr-4">Suppliers/vendors</td>
-                    <td className="py-2 pr-4">Yes</td>
-                    <td className="py-2 pr-4">Limited</td>
-                    <td className="py-2 pr-4">No</td>
-                    <td className="py-2 pr-4">Yes</td>
-                    <td className="py-2 pr-4">Yes</td>
-                  </tr>
-                  <tr className="border-b border-zinc-100">
-                    <td className="py-2 pr-4">Price</td>
-                    <td className="py-2 pr-4">Free with POS Pro</td>
-                    <td className="py-2 pr-4">Free</td>
-                    <td className="py-2 pr-4">Free</td>
-                    <td className="py-2 pr-4">$20–349/month</td>
-                    <td className="py-2 pr-4">$9/month, hypothesis</td>
+                  <tr className="bg-zinc-50/50">
+                    <td className="px-4 py-3 text-zinc-700">
+                      Automatic reorder
+                    </td>
+                    <td className="px-4 py-3 text-zinc-700">Yes</td>
+                    <td className="px-4 py-3 text-zinc-700">No</td>
+                    <td className="px-4 py-3 text-zinc-700">No</td>
+                    <td className="px-4 py-3 text-zinc-700">Yes</td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      Yes
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-2 pr-4">Complexity</td>
-                    <td className="py-2 pr-4">Low</td>
-                    <td className="py-2 pr-4">Low</td>
-                    <td className="py-2 pr-4">High</td>
-                    <td className="py-2 pr-4">High</td>
-                    <td className="py-2 pr-4">Low</td>
+                    <td className="px-4 py-3 text-zinc-700">
+                      Suppliers/vendors
+                    </td>
+                    <td className="px-4 py-3 text-zinc-700">Yes</td>
+                    <td className="px-4 py-3 text-zinc-700">Limited</td>
+                    <td className="px-4 py-3 text-zinc-700">No</td>
+                    <td className="px-4 py-3 text-zinc-700">Yes</td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      Yes
+                    </td>
+                  </tr>
+                  <tr className="bg-zinc-50/50">
+                    <td className="px-4 py-3 text-zinc-700">Price</td>
+                    <td className="px-4 py-3 text-zinc-700">
+                      Free with POS Pro
+                    </td>
+                    <td className="px-4 py-3 text-zinc-700">Free</td>
+                    <td className="px-4 py-3 text-zinc-700">Free</td>
+                    <td className="px-4 py-3 text-zinc-700">$20–349/month</td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      $9/month, hypothesis
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 text-zinc-700">Complexity</td>
+                    <td className="px-4 py-3 text-zinc-700">Low</td>
+                    <td className="px-4 py-3 text-zinc-700">Low</td>
+                    <td className="px-4 py-3 text-zinc-700">High</td>
+                    <td className="px-4 py-3 text-zinc-700">High</td>
+                    <td className="px-4 py-3 font-medium text-zinc-900">
+                      Low
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-xs text-zinc-500">
-              Comparing a hypothetical solution with existing alternatives. The
-              goal is to validate whether this positioning makes sense before
-              building.
-            </p>
           </div>
         </section>
 
@@ -299,7 +328,9 @@ export default function HomeEN() {
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
                 <p className="text-sm font-medium">Spreadsheet</p>
-                <p className="mt-2 text-xs text-zinc-600">Free, but manual</p>
+                <p className="mt-2 text-xs text-zinc-600">
+                  Free, but manual
+                </p>
               </div>
               <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
                 <p className="text-sm font-medium">Stockful</p>
@@ -333,9 +364,9 @@ export default function HomeEN() {
                 We’re still in validation. Leave your email to be notified at
                 launch and join the free early access.
               </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-6 flex flex-wrap items-start gap-3">
                 <QualificationForm />
-                <span className="text-xs text-zinc-500">
+                <span className="text-xs text-zinc-500 pt-6">
                   No card · No commitment
                 </span>
               </div>
