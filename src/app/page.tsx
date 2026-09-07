@@ -2,16 +2,14 @@ import QualificationForm from "@/components/qualification-form";
 
 export default function Home() {
   return (
-    <div className="bg-white text-zinc-900">
+    <div className="bg-white text-zinc-900 antialiased">
       <header className="border-b border-zinc-200">
         <div className="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
           <div>
             <p className="text-sm font-semibold tracking-tight">
-              Product Lab — experimento H1
+              Reposição simplificada pós-Stocky
             </p>
-            <p className="text-xs text-zinc-500">
-              Reposição simplificada pós-Stocky para Shopify
-            </p>
+            <p className="text-xs text-zinc-500">Para lojistas Shopify</p>
           </div>
           <a
             href="#form"
@@ -23,65 +21,124 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="mx-auto max-w-6xl px-6 py-16">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Alternativa simples ao Stocky para reposição automática no Shopify.
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-zinc-600">
-            O Stocky foi descontinuado em 31 de agosto de 2026. Estamos criando
-            uma ferramenta enxuta para quem não quer forecasting complexo nem
-            planilha manual.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#form"
-              className="inline-flex items-center rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
-            >
-              Quero early access
-            </a>
-            <span className="text-xs text-zinc-500 self-center">
-              Sem cartão · Early access grátis por 3 meses
-            </span>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-zinc-50 to-white" />
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <div className="max-w-3xl">
+              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                Stocky descontinuado em 31/08/2026
+              </p>
+              <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                O auto-PO pode continuar sem o Stocky.
+              </h1>
+              <p className="mt-6 text-lg text-zinc-600">
+                O Shopify Admin não oferece reorder automático nem geração simples
+                de pedidos de compra. Estamos criando uma alternativa enxuta para
+                quem quer manter o fluxo sem voltar para planilha.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="#form"
+                  className="inline-flex items-center rounded-full bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800"
+                >
+                  Quero early access
+                </a>
+                <span className="text-xs text-zinc-500">
+                  Sem cartão · Early access grátis por 3 meses
+                </span>
+              </div>
+              <p className="mt-4 text-xs text-zinc-500">
+                Sem compromisso · Cancelável quando quiser
+              </p>
+            </div>
           </div>
-          <p className="mt-6 text-xs text-zinc-500">
-            Em avaliação por lojistas Shopify · Sem compromisso · Cancelável quando quiser
-          </p>
         </section>
 
         <section className="border-y border-zinc-200 bg-zinc-50">
           <div className="mx-auto max-w-6xl px-6 py-16">
             <h2 className="text-2xl font-semibold tracking-tight">
-              O que mudou com o Stocky
+              O que o Stocky fazia e o Shopify não cobre
             </h2>
-            <ul className="mt-6 list-disc space-y-2 pl-5 text-zinc-700">
-              <li>Reorder automático quando estoque baixa</li>
-              <li>Geração de pedidos de compra a partir de vendas passadas</li>
-              <li>Suporte a fornecedores/vendors</li>
-              <li>Simplicidade operacional</li>
-            </ul>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  title: "Reorder automático",
+                  description:
+                    "Sugestão de reposição quando o estoque cai abaixo do ponto de reposição.",
+                },
+                {
+                  title: "Auto-PO",
+                  description:
+                    "Geração de pedido de compra a partir de vendas passadas, sem preenchimento manual.",
+                },
+                {
+                  title: "Fornecedores/vendors",
+                  description:
+                    "Fluxo direto com fornecedores principais por produto, sem complicação multi-vendor.",
+                },
+                {
+                  title: "Recebimento simples",
+                  description:
+                    "Registrar entrada de mercadoria sem ter que refazer todo o fluxo manualmente.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm"
+                >
+                  <p className="text-sm font-medium">{item.title}</p>
+                  <p className="mt-2 text-xs text-zinc-600">{item.description}</p>
+                </div>
+              ))}
+            </div>
             <p className="mt-6 text-sm text-zinc-600">
               O Shopify Admin não oferece auto-PO, reorder automático nem suporte
-              a vendors/fornecedores como Stocky fazia. Para muitos lojistas,
-              isso não é uma substituição equivalente.
+              a vendors como o Stocky fazia. Para muitos lojistas, isso não é uma
+              substituição equivalente.
             </p>
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-6 py-16">
           <h2 className="text-2xl font-semibold tracking-tight">
-            O que esta ferramenta faz
+            O que esta solução faz
           </h2>
           <p className="mt-3 text-zinc-600">
-            Hipótese de solução em validação: reposição simplificada, sem
-            complicação.
+            Solução focada em reposição, sem complicação.
           </p>
-          <ul className="mt-6 list-disc space-y-2 pl-5 text-zinc-700">
-            <li>Reorder automático quando estoque baixa</li>
-            <li>1 fornecedor principal por produto</li>
-            <li>Regras simples: ponto de reposição + quantidade mínima</li>
-            <li>Pedido de compra gerado em 1 clique</li>
-          </ul>
-          <p className="mt-6 text-sm text-zinc-600">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "Reorder automático",
+                description:
+                  "Quando o estoque baixa, a ferramenta sugere a quantidade de reposição.",
+              },
+              {
+                title: "1 fornecedor principal",
+                description:
+                  "Por produto, você define um fornecedor principal para simplificar o fluxo.",
+              },
+              {
+                title: "Regras simples",
+                description:
+                  "Ponto de reposição + quantidade mínima. Sem configuração complexa.",
+              },
+              {
+                title: "PO em 1 clique",
+                description:
+                  "Pedido de compra gerado e pronto para enviar ao fornecedor.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-zinc-200 p-5"
+              >
+                <p className="text-sm font-medium">{item.title}</p>
+                <p className="mt-2 text-xs text-zinc-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-zinc-500">
             Sem forecasting complexo. Sem ERP. Sem onboarding pesado.
           </p>
         </section>
@@ -89,7 +146,7 @@ export default function Home() {
         <section className="border-y border-zinc-200 bg-zinc-50">
           <div className="mx-auto max-w-6xl px-6 py-16">
             <h2 className="text-2xl font-semibold tracking-tight">
-              Comparação honesta
+              Comparação direta
             </h2>
             <div className="mt-8 overflow-x-auto">
               <table className="min-w-full text-left text-sm">
@@ -100,7 +157,7 @@ export default function Home() {
                     <th className="pb-2 pr-4 font-medium">Shopify Admin</th>
                     <th className="pb-2 pr-4 font-medium">Planilha</th>
                     <th className="pb-2 pr-4 font-medium">Apps alternativos</th>
-                    <th className="pb-2 font-medium">Esta ferramenta</th>
+                    <th className="pb-2 font-medium">Esta solução</th>
                   </tr>
                 </thead>
                 <tbody className="text-zinc-700">
@@ -148,8 +205,8 @@ export default function Home() {
               </table>
             </div>
             <p className="mt-4 text-xs text-zinc-500">
-              Esta ferramenta ainda não foi lançada. A tabela compara uma
-              hipótese de solução com alternativas existentes.
+              Comparação entre uma solução hipotética e alternativas existentes.
+              O objetivo é validar se essa posição faz sentido antes de construir.
             </p>
           </div>
         </section>
@@ -159,30 +216,40 @@ export default function Home() {
             Veja como funciona
           </h2>
           <p className="mt-3 text-zinc-600">
-            Material conceitual, não funcional. Serve apenas para validar a
-            ideia.
+            Material conceitual para validação da ideia.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg border border-zinc-200 p-4">
-              <p className="text-sm font-medium">1. Estoque baixo</p>
-              <p className="mt-2 text-xs text-zinc-600">
-                O Shopify indica que o produto está abaixo do ponto de reposição.
-              </p>
-            </div>
-            <div className="rounded-lg border border-zinc-200 p-4">
-              <p className="text-sm font-medium">2. Sugestão de reposição</p>
-              <p className="mt-2 text-xs text-zinc-600">
-                O app sugere quantidade com base em reorder point e vendas
-                recentes.
-              </p>
-            </div>
-            <div className="rounded-lg border border-zinc-200 p-4">
-              <p className="text-sm font-medium">3. PO gerado</p>
-              <p className="mt-2 text-xs text-zinc-600">
-                O pedido de compra é preenchido e fica pronto para envio ao
-                fornecedor.
-              </p>
-            </div>
+            {[
+              {
+                step: "1",
+                title: "Estoque baixo",
+                description:
+                  "O Shopify indica que o produto está abaixo do ponto de reposição.",
+              },
+              {
+                step: "2",
+                title: "Sugestão de reposição",
+                description:
+                  "O app sugere quantidade com base em reorder point e vendas recentes.",
+              },
+              {
+                step: "3",
+                title: "PO gerado",
+                description:
+                  "O pedido de compra é preenchido e fica pronto para envio ao fornecedor.",
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="rounded-xl border border-zinc-200 p-5"
+              >
+                <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
+                  Passo {item.step}
+                </p>
+                <p className="mt-2 text-sm font-medium">{item.title}</p>
+                <p className="mt-2 text-xs text-zinc-600">{item.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -192,34 +259,33 @@ export default function Home() {
               Por que esta abordagem
             </h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              <div>
-                <p className="text-sm font-medium">Não é mais um ERP</p>
-                <p className="mt-2 text-xs text-zinc-600">
-                  Focamos apenas em reposição, não em manufacturing, forecasting
-                  avançado ou multi-location complexo.
-                </p>
-              </div>
-              <div>
-                <p className="text-sm font-medium">Distribuição pelo ecossistema Shopify</p>
-                <p className="mt-2 text-xs text-zinc-600">
-                  Descoberta via App Store e busca, não por cold outreach ou
-                  venda consultiva.
-                </p>
-              </div>
-              <div>
-                <p className="text-sm font-medium">Validação antes de construir</p>
-                <p className="mt-2 text-xs text-zinc-600">
-                  Não lançamos sem evidência de demanda. O early access é grátis
-                  porque ainda estamos testando se vale a pena.
-                </p>
-              </div>
-              <div>
-                <p className="text-sm font-medium">Preço como hipótese</p>
-                <p className="mt-2 text-xs text-zinc-600">
-                  R$29/mês é uma referência inicial, não um preço fechado. O
-                  preço final pode mudar conforme o aprendizado.
-                </p>
-              </div>
+              {[
+                {
+                  title: "Não é mais um ERP",
+                  description:
+                    "Focamos apenas em reposição, não em forecasting avançado, manufacturing ou multi-location complexo.",
+                },
+                {
+                  title: "Distribuição pelo ecossistema",
+                  description:
+                    "Descoberta via App Store e busca, não por cold outreach ou venda consultiva.",
+                },
+                {
+                  title: "Validação antes de construir",
+                  description:
+                    "Não lançamos sem evidência de demanda. O early access é grátis porque ainda estamos testando se vale a pena.",
+                },
+                {
+                  title: "Preço como hipótese",
+                  description:
+                    "R$29/mês é uma referência inicial, não um preço fechado. O preço final pode mudar conforme o aprendizado.",
+                },
+              ].map((item) => (
+                <div key={item.title}>
+                  <p className="text-sm font-medium">{item.title}</p>
+                  <p className="mt-2 text-xs text-zinc-600">{item.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -228,24 +294,24 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 py-16">
             <h2 className="text-2xl font-semibold tracking-tight">Planos</h2>
             <p className="mt-3 text-zinc-600">
-              Preço hipotético para validação. Sujeito a alteração.
+              Referência de preço para validação. Sujeito a alteração.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-lg border border-zinc-200 p-6">
+              <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
                 <p className="text-sm font-medium">Planilha</p>
                 <p className="mt-2 text-xs text-zinc-600">Grátis, mas manual</p>
               </div>
-              <div className="rounded-lg border border-zinc-200 p-6">
+              <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
                 <p className="text-sm font-medium">Stockful</p>
                 <p className="mt-2 text-xs text-zinc-600">R$79/mês</p>
               </div>
-              <div className="rounded-lg border border-zinc-200 p-6">
+              <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm">
                 <p className="text-sm font-medium">Fabrikatör</p>
                 <p className="mt-2 text-xs text-zinc-600">R$99/mês</p>
               </div>
             </div>
-            <div className="mt-8 rounded-lg border border-zinc-900 p-6">
-              <p className="text-sm font-medium">Esta ferramenta</p>
+            <div className="mt-8 rounded-2xl border-2 border-zinc-900 p-6">
+              <p className="text-sm font-medium">Solução enxuta</p>
               <p className="mt-2 text-xs text-zinc-600">
                 R$29/mês, simples, específica para reposição.
               </p>
@@ -256,31 +322,42 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="form" className="mx-auto max-w-6xl px-6 py-16">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Quero early access
-          </h2>
-          <p className="mt-3 text-zinc-600">
-            Não construímos ainda. Este é um experimento de validação. Se houver
-            demanda suficiente, o produto será desenvolvido.
-          </p>
-          <p className="mt-2 text-xs text-zinc-500">
-            Sem cartão · Sem compromisso · Cancelável quando quiser
-          </p>
-          <QualificationForm />
+        <section id="form" className="relative overflow-hidden">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-zinc-50" />
+          <div className="mx-auto max-w-6xl px-6 py-20">
+            <div className="max-w-2xl">
+              <h2 className="text-2xl font-semibold tracking-tight">
+                Quero early access
+              </h2>
+              <p className="mt-3 text-zinc-600">
+                Ainda estamos em fase de validação. Deixe seu email para ser
+                avisado do lançamento e participar do early access gratuito.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <QualificationForm />
+                <span className="text-xs text-zinc-500">
+                  Sem cartão · Sem compromisso
+                </span>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
       <footer className="border-t border-zinc-200">
         <div className="mx-auto max-w-6xl px-6 py-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-zinc-500">
-            Não construímos ainda. Este é um experimento de validação. Se houver
-            demanda suficiente, o produto será desenvolvido.
+            Fase de validação. O produto será desenvolvido se houver demanda
+            suficiente.
           </p>
           <div className="text-xs text-zinc-500">
-            <a href="#" className="hover:underline">Política de privacidade</a>
+            <a href="#" className="hover:underline">
+              Política de privacidade
+            </a>
             <span className="mx-2">·</span>
-            <a href="#" className="hover:underline">Contato</a>
+            <a href="#" className="hover:underline">
+              Contato
+            </a>
           </div>
         </div>
       </footer>
